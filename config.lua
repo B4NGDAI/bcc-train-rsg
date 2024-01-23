@@ -6,7 +6,7 @@ Config.defaultlang = 'en_lang'
 Config.CruiseControl = true --set true if you want to allow cruise control
 
 Config.FuelSettings = {
-    TrainFuelItem = 'charcoal', --db name of the item needed to fuel the train
+    TrainFuelItem = 'bagofcoal', --db name of the item needed to fuel the train
     TrainFuelItemDisplayName = 'Bag of Coal', --display name of the item
     TrainFuelItemAmount = 5, --How many of the item it will take to fuel the train
     FuelDecreaseTime = 30000, --time in ms of how often the trains fuel goes down
