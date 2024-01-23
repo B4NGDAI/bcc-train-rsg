@@ -55,8 +55,10 @@ local retval = exports['bcc-train']:BacchusBridgeDestroyed()
 
 # Preview 
 
-- https://media.discordapp.net/attachments/1075528709072760852/1199352707513864354/image.png?ex=65c23b40&is=65afc640&hm=ac4522b914bfbbd943cb2711a6fcb34cec54592a33b1336ed6fbfacb67d1db99&=&format=webp&quality=lossless&width=811&height=671
+- ![image](https://github.com/B4NGDAI/bcc-train-rsg/assets/89564598/218e61d3-6094-4a0a-84b3-fdd409598f84)
 
-- https://media.discordapp.net/attachments/1075528709072760852/1199352707513864354/image.png?ex=65c23b40&is=65afc640&hm=ac4522b914bfbbd943cb2711a6fcb34cec54592a33b1336ed6fbfacb67d1db99&=&format=webp&quality=lossless&width=811&height=671
 
-- https://media.discordapp.net/attachments/1075528709072760852/1199352708096860190/image.png?ex=65c23b40&is=65afc640&hm=1875e018b1cba646040d9e64597003d32d4451de4f6a0e5c8c77e560d17194d6&=&format=webp&quality=lossless&width=1297&height=671
+- ![image](https://github.com/B4NGDAI/bcc-train-rsg/assets/89564598/74559023-f06b-46a7-ac36-51b46fd98d5c)
+
+
+- ![Uploading image.png…]()
