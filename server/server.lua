@@ -11,7 +11,7 @@ lib.callback.register('bcc-trains:server:HasJob', function(source)
 
   for _, station in pairs(Config.Stations) do
     -- Check if job is enabled for the current station
-    if not station.jobenabled then
+    if not station.jobEnabled then
       HasJob = true
     else
       local ped = GetPlayerPed(src)
