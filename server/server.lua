@@ -10,15 +10,16 @@ lib.callback.register('bcc-trains:server:HasJob', function(source)
   end
 
   for _, station in pairs(Config.Stations) do
-    -- Check if job is enabled for the current station
-    if not station.jobEnabled then
-      HasJob = true
-    else
-      local ped = GetPlayerPed(src)
-      local coords = GetEntityCoords(ped)
-      local dist = #(coords - vector3(station.coords.x, station.coords.y, station.coords.z))
+    local ped = GetPlayerPed(src)
+    local coords = GetEntityCoords(ped)
+    local dist = #(coords - vector3(station.coords.x, station.coords.y, station.coords.z))
 
-      if dist < station.radius then
+    -- Check if player is within the station radius
+    if dist < station.radius then
+      -- Check if job is enabled for the current station
+      if not station.jobEnabled then
+        HasJob = true
+      else
         for _, jobName in pairs(station.job) do
           if Player.PlayerData.job.name == jobName and Player.PlayerData.job.grade.level == station.grade then
             HasJob = true
