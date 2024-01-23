@@ -2,17 +2,6 @@
 InMission = false
 EngineStarted = false
 
--- AddEventHandler('bcc-train:MenuClose', function()
---     while inMenu do
---         Wait(5)
---         if IsControlJustReleased(0, 0x156F7119) then
---             inMenu = false
---             MenuData.CloseAll()
---             break
---         end
---     end
--- end)
-
 function OpenMenuStation()
     MenuData.CloseAll()
 
