@@ -14,7 +14,6 @@ EngineStarted = false
 -- end)
 
 function OpenMenuStation()
-    TriggerEvent('bcc-train:MenuClose')
     MenuData.CloseAll()
 
     local elements = {
