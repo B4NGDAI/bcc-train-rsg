@@ -115,8 +115,9 @@ RegisterServerEvent('bcc-train:FuelTrain', function(trainId, configTable)
   local src = source
   local Player = Core.Functions.GetPlayer(src)
   local itemCount = Player.Functions.GetItemByName(Config.FuelSettings.TrainFuelItem)
-  if itemCount >= Config.FuelSettings.TrainFuelItemAmount then
+  if itemCount.amount >= Config.FuelSettings.TrainFuelItemAmount then
     Player.Functions.RemoveItem(Config.FuelSettings.TrainFuelItem, Config.FuelSettings.FuelDecreaseAmount)
+    TriggerClientEvent("inventory:client:ItemBox", src, Core.Shared.Items[itemCount.name], "remove")
     local param = { ['trainId'] = trainId, ['fuel'] = configTable.maxFuel }
     MySQL.query.await("UPDATE train SET `fuel`=@fuel WHERE trainid=@trainId", param)
     TriggerClientEvent('bcc-train:CleintFuelUpdate', src, configTable.maxFuel)
@@ -130,8 +131,9 @@ RegisterServerEvent('bcc-train:RepairTrain', function(trainId, configTable)
   local src = source
   local Player = Core.Functions.GetPlayer(src)
   local itemCount = Player.Functions.GetItemByName(Config.ConditionSettings.TrainCondItem)
-  if itemCount >= Config.ConditionSettings.TrainCondItemAmount then
+  if itemCount.amount >= Config.ConditionSettings.TrainCondItemAmount then
     Player.Functions.RemoveItem(Config.ConditionSettings.TrainCondItem, Config.ConditionSettings.TrainCondItemAmount)
+    TriggerClientEvent("inventory:client:ItemBox", src, Core.Shared.Items[itemCount.name], "remove")
     local param = { ['trainId'] = trainId, ['cond'] = configTable.maxCondition }
     MySQL.query.await("UPDATE train SET `condition`=@cond WHERE trainid=@trainId", param)
     TriggerClientEvent('bcc-train:CleintCondUpdate', src, configTable.maxCondition)
@@ -148,9 +150,10 @@ RegisterServerEvent('bcc-train:ServerBridgeFallHandler', function(freshJoin)
   local Player = Core.Functions.GetPlayer(src)
   if not freshJoin then
     local itemCount = Player.Functions.GetItemByName(Config.BacchusBridgeDestroying.dynamiteItem)
-    if itemCount >= Config.BacchusBridgeDestroying.dynamiteItemAmount then
+    if itemCount.amount >= Config.BacchusBridgeDestroying.dynamiteItemAmount then
       if not BridgeDestroyed then
         Player.Functions.RemoveItem(Config.BacchusBridgeDestroying.dynamiteItem, Config.BacchusBridgeDestroying.dynamiteItemAmount)
+        TriggerClientEvent("inventory:client:ItemBox", src, Core.Shared.Items[itemCount.name], "remove")
         BridgeDestroyed = true
         TriggerClientEvent('ox_lib:notify', src, {title = _U("runFromExplosion"), type = 'inform', duration = 5000 })
         Wait(Config.BacchusBridgeDestroying.explosionTimer)
